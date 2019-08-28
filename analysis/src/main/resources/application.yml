@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: Analysis
+server:
+  port: 8763
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8082/eureka
+

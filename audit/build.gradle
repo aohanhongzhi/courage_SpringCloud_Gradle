@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'cn.hxy'
+group = 'hxy.courage'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -13,17 +13,21 @@ repositories {
 }
 
 ext {
+    set('springBootAdminVersion', "2.1.5")
     set('springCloudVersion', "Greenwich.SR2")
 }
 
 dependencies {
-//    implementation 'de.codecentric:spring-boot-admin-starter-client'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'de.codecentric:spring-boot-admin-starter-client'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {
     imports {
+        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
