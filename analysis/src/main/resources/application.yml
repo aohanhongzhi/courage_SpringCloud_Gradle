@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: Analysis
+    name: ANALYSIS
 server:
   port: 8763
 eureka:

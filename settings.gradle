@@ -1,2 +1,10 @@
 rootProject.name = 'courage'
+include 'admin'
+include 'analysis'
+include 'audit'
+include 'code'
+include 'eureka-server'
+include 'project'
+include 'user'
+include 'zuul'
 
