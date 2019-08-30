@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+jar.enabled=false
+
+group 'cn.hxy'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    //maven仓库
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}
+
