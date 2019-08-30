@@ -2,16 +2,52 @@ plugins {
     id 'java'
 }
 
+jar.enabled=false
+
 group 'cn.hxy'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-repositories {
-//    mavenCentral()
-    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+allprojects {
+    repositories {
+        google()
+        jcenter() //代码托管库：设置之后可以在项目中轻松引用jcenter上的开源项目
+    }
 }
+
+//repositories {
+//    mavenCentral()
+//    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//}
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+task helloTask {
+    println "Hello World"
+}
+
+task updateRuntimeJAR {
+
+}
+
+//初次环境设置，布置docker啥的
+
+task setupEnvironment{
+
+}
+
+//运行微服务
+task startRuntime {
+
+//    将所有打包好的jar包，推送到docker当中
+
+
+}
+//停止微服务
+task stopRuntime {
+
+    //停止docker应用
+
 }

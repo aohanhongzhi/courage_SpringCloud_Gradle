@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ANALYSIS
+server:
+  port: 8763
+
+
+

@@ -7,4 +7,5 @@ include 'eureka-server'
 include 'project'
 include 'user'
 include 'zuul'
+include 'entity'
 
