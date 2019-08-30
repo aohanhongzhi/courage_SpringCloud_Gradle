@@ -3,12 +3,16 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
 }
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
 group = 'hxy.courage'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/spring/'}
     mavenCentral()
 }
 
@@ -30,3 +34,13 @@ dependencyManagement {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
+//def mainClassName = "hxy.courage.admin.AdminApplication"
+//打包
+//task runnbaleJar(type: Jar) {
+//    from files(sourceSets.main.output.classesDirs)
+//    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+//
+//    manifest {
+//        attributes 'Main-Class': mainClassName
+//    }
+//}

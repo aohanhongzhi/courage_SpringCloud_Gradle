@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.1.7.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id 'war'   //比普通的 java 项目多出了一个 war 插件的引入
 }
 
 group = 'cn.hxy'
