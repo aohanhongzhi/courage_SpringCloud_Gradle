@@ -1,7 +1,10 @@
 plugins {
     id 'java'
 }
-
+//定义扩展属性(可选)
+ext {
+    springBootVersion = "2.1.7.RELEASE"
+}
 group 'cn.hxy'
 version '1.0-SNAPSHOT'
 
@@ -10,8 +13,21 @@ sourceCompatibility = 1.8
 repositories {
 //    mavenCentral()
     maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//    maven { url "https://repo.spring.io/plugins-release" }
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+//清除上次的编译过的文件
+task clearPj(type:Delete){
+    delete 'build','target'
+    delete 'eureka-server/build'
+}
+task sourcesJar(type: Jar) {
+//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    classifier = "sources"
+    from sourceSets.main.allSource
+    // Don't include or exclude anything explicitly by default. See SPR-12085.
 }
