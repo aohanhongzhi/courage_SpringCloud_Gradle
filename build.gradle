@@ -2,6 +2,9 @@ plugins {
     id 'java'
 }
 
+//Project不需要打包成jar
+jar.enabled=false
+
 group 'cn.hxy'
 version '1.0-SNAPSHOT'
 
